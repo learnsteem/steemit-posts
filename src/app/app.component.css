@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Open+Sans);
+
+article {
+  display: flex;
+  margin: 0 auto 10px;
+  height: 300px;
+  width: 800px;
+  font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+  line-height: 21px;
+	border-radius: 3px;
+	box-shadow: 0 3px 7px -3px rgba(0, 0, 0, 0.3);
+}
+article .image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-image: url('https://placeimg.com/300/300/tech');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+article .body {
+  width: 500px;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+article .body h1 {
+  margin: 0 0 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 2px;
+}
+article .body .meta,
+article .body .tags {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9a9a;
+}
+article .body .tags {
+  margin-top: -2px;
+}
+article .body .tags a::before {
+  content: ', ';
+}
+article .body .tags a:first-child::before {
+  content: '';
+}
+article .body > p {
+  position: relative;
+  margin: 15px 0 0;
+}
+article .body > p::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: 5px;
+  width: 50px;
+  background-color: #75d13b;
+}
+article.odd .image {
+  order: 2;
+}
+article.odd .image::before,
+article.even .image::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  width: 22px;
+  height: 100%;
+  background-color: #fff;
+  transform: skewX(-4deg);
+}
+article.odd .image::before {
+  left: -11px;
+}
+article.even .image::after {
+  right: -11px;
+}
